@@ -3,6 +3,8 @@
 // Récupération des scripts et styles
 function mota_scripts() {
 	wp_enqueue_style( 'mota-style', get_stylesheet_uri() );
+  wp_enqueue_script( 'mota-script', get_stylesheet_directory_uri() . '/js/script.js', array(), "1
+  0", true );
 }
 
 add_action( 'wp_enqueue_scripts', 'mota_scripts' );
@@ -25,7 +27,7 @@ add_action( 'after_setup_theme', 'theme_support_setup' );
 // Rajoute le bouton de contact à la fin du menu principal
 function mota_contact_nav($items, $args) {
   if ( $args->theme_location == 'primary' ) {
-    $items .= '<li id="contact-nav"><a href="#">Contact</a></li>';
+    $items .= '<li id="contact-nav"><p>Contact</p></li>';
   }
   return $items;  
 }
