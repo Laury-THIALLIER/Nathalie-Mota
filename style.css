@@ -5,3 +5,105 @@ Description: Thème pour Nathalie Mota, photographe professionnelle dans l’év
 Version: 1.0
 Text Domain: nathaliemota
 */
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("fonts/SpaceMono-Regular.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Space Mono";
+  src: url("fonts/SpaceMono-Italic.ttf");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Global
+# Header
+# Sections
+  - Hero
+  - Filtres
+  - Photos
+    - Lightbox
+# Footer
+--------------------------------------------------------------*/
+
+/* Global
+	 ========================================================================== */
+
+html {
+  margin: 0 auto;
+  max-width: 1920px;
+  font-family: "Space Mono";
+}
+
+/* Header
+	 ========================================================================== */
+
+header#masthead {
+  background-color: white;
+  padding: 30px 145px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav#site-navigation #primary-menu {
+  display: flex;
+  list-style-type: none;
+  gap: 45px;
+  margin: 0;
+}
+
+nav#site-navigation #primary-menu a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}
+
+/* Hero
+	 ========================================================================== */
+
+/* Filtres
+	 ========================================================================== */
+
+/* Photos
+	 ========================================================================== */
+
+/* Lightbox
+	 ========================================================================== */
+
+/* Footer
+	 ========================================================================== */
+
+footer#colophon {
+  display: flex;
+  justify-content: center;
+  border-top: solid 1px black;
+  padding: 10px 0;
+}
+
+nav#footer-navigation #footer-menu {
+  display: flex;
+  list-style-type: none;
+  gap: 85px;
+  margin: 0;
+}
+
+nav#footer-navigation #footer-menu a {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+}
+
+nav#footer-navigation #footer-menu p {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  margin: 0;
+}
