@@ -3,8 +3,8 @@
 // Récupération des scripts et styles
 function mota_scripts() {
 	wp_enqueue_style( 'mota-style', get_stylesheet_uri() );
-  wp_enqueue_script( 'mota-script', get_stylesheet_directory_uri() . '/js/script.js', array(), "1
-  0", true );
+  wp_enqueue_style('single-style', get_template_directory_uri() . '/css/single.css');
+  wp_enqueue_script( 'mota-script', get_stylesheet_directory_uri() . '/js/script.js', array(), "1.0", true );
 }
 
 add_action( 'wp_enqueue_scripts', 'mota_scripts' );
@@ -28,7 +28,7 @@ add_action( 'after_setup_theme', 'theme_support_setup' );
 // Rajoute le bouton de contact à la fin du menu principal
 function mota_contact_nav($items, $args) {
   if ( $args->theme_location == 'primary' ) {
-    $items .= '<li id="contact-nav"><p>Contact</p></li>';
+    $items .= '<li class="contact-nav"><p>Contact</p></li>';
   }
   return $items;  
 }
@@ -38,9 +38,11 @@ add_filter('wp_nav_menu_items', 'mota_contact_nav', 10, 2);
 // Rajoute Tous droits réservés à la fin du menu du footer
 function mota_footer_nav($items, $args) {
   if ( $args->theme_location == 'footer' ) {
-    $items .= '<li id="contact-nav"><p>Tous droits réservés</p></li>';
+    $items .= '<li><p>Tous droits réservés</p></li>';
   }
   return $items;  
 }
 
 add_filter('wp_nav_menu_items', 'mota_footer_nav', 10, 2);
+
+
