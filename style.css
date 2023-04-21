@@ -69,6 +69,10 @@ main {
   padding: 0 145px;
 }
 
+.hidden {
+  display: none;
+}
+
 @media screen and (max-width: 1100px) {
   main {
     padding: 0 40px;
@@ -168,14 +172,121 @@ nav#site-navigation #fullscreenMenu ul.menu p {
 /* Hero
 	 ========================================================================== */
 
+section.hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+  max-width: 1920px;
+  margin: -85px -145px 0 -145px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.hero h1 {
+  font-style: italic;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 142px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 2px;
+  -webkit-text-stroke-color: white;
+  color: transparent;
+  text-align: center;
+}
+
+@media screen and (max-width: 1100px) {
+  section.hero {
+    margin: -85px -40px 0 -40px;
+  }
+
+  section.hero h1 {
+    font-size: 10vw;
+    line-height: 80px;
+  }
+}
+
 /* Filtres
 	 ========================================================================== */
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.filters > div {
+  display: flex;
+}
+
+.filters > div :first-child {
+  margin-right: 20px;
+}
+
+.filters .column {
+  display: flex;
+  flex-direction: column;
+}
+
+.filters label {
+  text-transform: uppercase;
+  margin: 5px 0;
+}
+
+.filters select {
+  background-color: white;
+  border: 1px solid black;
+  height: 40px;
+  width: 300px;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1000px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters > div {
+    flex-direction: column;
+    width: 300px;
+  }
+
+  .filters > div :first-child {
+    margin-right: 0;
+  }
+
+  .filters .column {
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 /* Photos
 	 ========================================================================== */
 
+.imagesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  justify-content: center;
+  margin: 50px auto;
+}
+
+.imagesGrid .photoLink > img {
+  width: 100%;
+  height: 750px;
+  object-fit: cover;
+}
+
 a.photoLink {
   position: relative;
+}
+
+a.photoLink.home {
+  height: 750px;
 }
 
 span.photoOverlay {
@@ -227,6 +338,37 @@ a.photoLink:hover span.photoOverlay {
 .photoOverlay .infosOverlay p {
   text-transform: uppercase;
   color: white;
+}
+
+.moreButton {
+  display: flex;
+  justify-content: center;
+}
+
+.moreButton #show-more {
+  cursor: pointer;
+  background-color: #d8d8d8;
+  padding: 8px 15px;
+  transition: ease-in-out 0.2s;
+}
+
+.moreButton #show-more:hover {
+  background-color: black;
+  color: white;
+}
+
+@media screen and (max-width: 1000px) {
+  .imagesGrid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .imagesGrid .photoLink > img {
+    height: 450px;
+  }
+
+  a.photoLink.home {
+    height: 450px;
+  }
 }
 
 /* Lightbox

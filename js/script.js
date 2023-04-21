@@ -40,27 +40,31 @@ burgerMenu.addEventListener("click", () => {
 });
 
 // LIGHTBOX
-const fullsizeImgs = document.querySelectorAll(".fullscreenImg");
 const lightbox = document.querySelector("#lightbox");
 const closeLightbox = document.querySelector("#closeLightbox");
 
-fullsizeImgs.forEach((fullsizeImg) => {
-  fullsizeImg.addEventListener("click", (event) => {
-    event.preventDefault();
+function lightboxMota() {
+  const fullsizeImgs = document.querySelectorAll(".fullscreenImg");
+  fullsizeImgs.forEach((fullsizeImg) => {
+    fullsizeImg.addEventListener("click", (event) => {
+      event.preventDefault();
 
-    const img = new Image();
-    img.src = fullsizeImg.parentNode.parentNode.previousElementSibling.src;
-    img.style.maxWidth = "90%";
-    img.style.maxHeight = "90%";
+      const img = new Image();
+      img.src = fullsizeImg.parentNode.parentNode.previousElementSibling.src;
+      img.style.maxWidth = "90%";
+      img.style.maxHeight = "90%";
 
-    lightbox.appendChild(img);
+      lightbox.appendChild(img);
 
-    lightbox.style.display = "flex";
+      lightbox.style.display = "flex";
+    });
   });
-});
 
-closeLightbox.addEventListener("click", () => {
-  lightbox.style.display = "none";
+  closeLightbox.addEventListener("click", () => {
+    lightbox.style.display = "none";
 
-  lightbox.removeChild(lightbox.lastChild);
-});
+    lightbox.removeChild(lightbox.lastChild);
+  });
+}
+
+lightboxMota();

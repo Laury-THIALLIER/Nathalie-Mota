@@ -6,7 +6,7 @@
 			
 			<article class="post">
 				<div id="lightbox">
-				<img id="closeLightbox" src="<?php echo get_template_directory_uri(); ?>/assets/images/lightbox-cross.svg" alt="Fermer">
+					<img id="closeLightbox" src="<?php echo get_template_directory_uri(); ?>/assets/images/lightbox-cross.svg" alt="Fermer">
 				</div>
 				<section class="infosSection">
 					<div class="singleTop">
